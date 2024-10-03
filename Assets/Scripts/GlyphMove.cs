@@ -21,7 +21,7 @@ public class GlyphMove : MonoBehaviour
         if (z > 40f)
         {
             Destroy(gameObject);
-            //Temporary until input is waorking
+            //Temporary until input is working
             ScoreScript.trigger = 1;
         }
     }
