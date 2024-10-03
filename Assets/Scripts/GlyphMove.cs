@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class GlyphMove : MonoBehaviour
 {
+    public GameObject Score;
+    private Score ScoreScript;
     float z = -10f;
 
-    // Start is called before the first frame update
     void Start()
     {
-
+        ScoreScript = Score.GetComponent<Score>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         z += 20 * Time.deltaTime;
@@ -20,6 +21,8 @@ public class GlyphMove : MonoBehaviour
         if (z > 40f)
         {
             Destroy(gameObject);
+            //Temporary until input is working
+            ScoreScript.trigger = 1;
         }
     }
 }
