@@ -27,7 +27,7 @@ public class Score : MonoBehaviour
         timer += Time.deltaTime;
         if (timer > 1)
         {
-            //score++;
+            score++;
             ScoreText.SetText(score.ToString());
             timer = 0;
         }
