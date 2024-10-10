@@ -18,10 +18,16 @@ public class Score : MonoBehaviour
             ScoreText.SetText(score.ToString());
             trigger = 0;
         }
+        if (trigger == 2)
+        {
+            score +=5;
+            ScoreText.SetText(score.ToString());
+            trigger = 0;
+        }
         timer += Time.deltaTime;
         if (timer > 1)
         {
-            //score++;
+            score++;
             ScoreText.SetText(score.ToString());
             timer = 0;
         }
