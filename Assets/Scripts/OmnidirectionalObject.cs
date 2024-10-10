@@ -8,6 +8,8 @@ public class OmnidirectionalObject : MonoBehaviour
     private Score ScoreScript;
     public GameObject Canvas;
     private MouseInput InputScript;
+    public GameObject Slider;
+    private SurvivalMeter MeterScript;
     float z = -10f;
     int hits = 0;
     int maxhits;
@@ -17,6 +19,7 @@ public class OmnidirectionalObject : MonoBehaviour
     {
         ScoreScript = Score.GetComponent<Score>();
         InputScript = Canvas.GetComponent<MouseInput>();
+        MeterScript = Slider.GetComponent<SurvivalMeter>();
         maxhits = Random.Range(5, 10);
     }
 
@@ -28,6 +31,7 @@ public class OmnidirectionalObject : MonoBehaviour
         {
             input = InputScript.input;
             ScoreScript.trigger = 1;
+            MeterScript.trigger = 1;
             hits += 1;
             if (hits == maxhits)
             {
@@ -38,6 +42,7 @@ public class OmnidirectionalObject : MonoBehaviour
         }
         if (z > 140f)
         {
+            MeterScript.trigger = 2;
             Destroy(gameObject);
         }
     }

@@ -15,6 +15,7 @@ public class SurvivalMeter : MonoBehaviour
     public float CorrectSwipe = 2.5f;
     public float IncorrectSwipe = 1.5f;
 
+    public int trigger = 0;
 
     private float CurrentTime;
     private float UpdateTime;
@@ -26,7 +27,7 @@ public class SurvivalMeter : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         // update timer
         CurrentTime = Time.time;
@@ -47,7 +48,7 @@ public class SurvivalMeter : MonoBehaviour
         }
 
         // if correct swipe increase timer
-        if (Input.GetKeyDown(KeyCode.C))
+        if (trigger == 1)
         {
             if (UpdateTime == 10)
             {
@@ -57,16 +58,17 @@ public class SurvivalMeter : MonoBehaviour
             {
                 SurvivalTimer = SurvivalTimer + CorrectSwipe;
             }
-            
         }
 
         // if incorrect swipe decrease timer
-        if (Input.GetKeyDown(KeyCode.I))
+        if (trigger == 2)
         {
             SurvivalTimer = SurvivalTimer - IncorrectSwipe;
         }
 
         // update slider
         Slider.value = UpdateTime;
+
+        trigger = 0;
     }
 }
