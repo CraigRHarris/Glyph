@@ -10,11 +10,6 @@ public class Score : MonoBehaviour
     int score = 0;
     float timer;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (trigger == 1)
@@ -24,10 +19,9 @@ public class Score : MonoBehaviour
             trigger = 0;
         }
         timer += Time.deltaTime;
-        Debug.Log(timer);
         if (timer > 1)
         {
-            score++;
+            //score++;
             ScoreText.SetText(score.ToString());
             timer = 0;
         }
