@@ -10,17 +10,18 @@ public class OmnidirectionalObject : MonoBehaviour
     private MouseInput InputScript;
     float z = -10f;
     int hits = 0;
+    int maxhits;
     string input;
 
     void Start()
     {
         ScoreScript = Score.GetComponent<Score>();
         InputScript = Canvas.GetComponent<MouseInput>();
+        maxhits = Random.Range(5, 10);
     }
 
     void Update()
     {
-
         z += 20 * Time.deltaTime;
         transform.position = new Vector3(0, 1, z);
         if (InputScript.input != input & (InputScript.input == "Right" | InputScript.input == "Left" | InputScript.input == "Up" | InputScript.input == "Down"))
@@ -28,14 +29,14 @@ public class OmnidirectionalObject : MonoBehaviour
             input = InputScript.input;
             ScoreScript.trigger = 1;
             hits += 1;
-            if (hits == 5)
+            if (hits == maxhits)
             {
                 ScoreScript.trigger = 2;
                 Destroy(gameObject);
                 //Get glyph
             }
         }
-        if (z > 40f)
+        if (z > 140f)
         {
             Destroy(gameObject);
         }
