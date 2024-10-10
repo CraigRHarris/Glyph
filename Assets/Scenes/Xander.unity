@@ -1625,6 +1625,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Slider: {fileID: 0}
   SurvivalTimer: 10
+  CorrectSwipe: 2.5
+  IncorrectSwipe: 1.5
 --- !u!1 &2133293096
 GameObject:
   m_ObjectHideFlags: 0

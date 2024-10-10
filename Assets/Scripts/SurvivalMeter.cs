@@ -65,5 +65,8 @@ public class SurvivalMeter : MonoBehaviour
         {
             SurvivalTimer = SurvivalTimer - IncorrectSwipe;
         }
+
+        // update slider
+        Slider.value = UpdateTime;
     }
 }
