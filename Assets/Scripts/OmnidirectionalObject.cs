@@ -28,9 +28,9 @@ public class OmnidirectionalObject : MonoBehaviour
             input = InputScript.input;
             ScoreScript.trigger = 1;
             hits += 1;
-            Debug.Log(hits);
             if (hits == 5)
             {
+                ScoreScript.trigger = 2;
                 Destroy(gameObject);
                 //Get glyph
             }
