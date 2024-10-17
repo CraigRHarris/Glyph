@@ -39,11 +39,11 @@ public class SurvivalMeter : MonoBehaviour
         {
             UpdateTime = 10;
         }
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
         // Debug.Log(UpdateTime);
-=======
+//=======
         //Debug.Log(UpdateTime);
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 
         // ending game
         if (UpdateTime <= 0)

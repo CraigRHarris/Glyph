@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour
     public GameObject ObjectUp;
     public GameObject ObjectDown;
     public GameObject OmnidirectionalObject;
+    public float speed = 20f;
     float timer;
     int type;
     int direction;
@@ -17,7 +18,7 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer > 3f)
+        if (timer > 3f)
         {
             type = Random.Range(0, 5);
             if (type == 0)
@@ -40,6 +41,7 @@ public class Spawner : MonoBehaviour
             {
                 Instantiate(OmnidirectionalObject, new Vector3(0, 1, -10), Quaternion.identity);
             }
+            speed += 1f;
             timer = 0f;
         }
     }
