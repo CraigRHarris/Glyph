@@ -7,6 +7,8 @@ public class OmnidirectionalObject : MonoBehaviour
     private Score ScoreScript;
     private MouseInput InputScript;
     private SurvivalMeter MeterScript;
+    private Spawner SpawnerScript;
+    float speed;
     float z = -10f;
     int hits = 0;
     int maxhits;
@@ -17,12 +19,14 @@ public class OmnidirectionalObject : MonoBehaviour
         ScoreScript = GameObject.Find("Score").GetComponent<Score>();
         InputScript = GameObject.Find("Canvas").GetComponent<MouseInput>();
         MeterScript = GameObject.Find("Slider").GetComponent<SurvivalMeter>();
+        SpawnerScript = GameObject.Find("Spawner").GetComponent<Spawner>();
+        speed = SpawnerScript.speed;
         maxhits = Random.Range(5, 10);
     }
 
     void Update()
     {
-        z += 20 * Time.deltaTime;
+        z += speed * Time.deltaTime;
         transform.position = new Vector3(0, 1, z);
         if (InputScript.input != input & (InputScript.input == "Right" | InputScript.input == "Left" | InputScript.input == "Up" | InputScript.input == "Down"))
         {
@@ -34,7 +38,6 @@ public class OmnidirectionalObject : MonoBehaviour
             {
                 ScoreScript.trigger = 2;
                 Destroy(gameObject);
-                //Get glyph
             }
         }
         if (z > 140f)

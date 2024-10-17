@@ -8,7 +8,9 @@ public class Object : MonoBehaviour
     private Score ScoreScript;
     private MouseInput InputScript;
     private SurvivalMeter MeterScript;
+    private Spawner SpawnerScript;
     public string direction;
+    float speed;
     float z = -10f;
     string input;
 
@@ -17,11 +19,13 @@ public class Object : MonoBehaviour
         ScoreScript = GameObject.Find("Score").GetComponent<Score>();
         InputScript = GameObject.Find("Canvas").GetComponent<MouseInput>();
         MeterScript = GameObject.Find("Slider").GetComponent<SurvivalMeter>();
+        SpawnerScript = GameObject.Find("Spawner").GetComponent<Spawner>();
+        speed = SpawnerScript.speed;
     }
 
     void Update()
     {
-        z += 20 * Time.deltaTime;
+        z += speed * Time.deltaTime;
         transform.position = new Vector3(0, 1, z);
         if (InputScript.input == direction)
         {
