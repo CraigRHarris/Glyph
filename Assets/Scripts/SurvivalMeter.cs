@@ -39,7 +39,7 @@ public class SurvivalMeter : MonoBehaviour
         {
             UpdateTime = 10;
         }
-        Debug.Log(UpdateTime);
+        // Debug.Log(UpdateTime);
 
         // ending game
         if (UpdateTime <= 0)
