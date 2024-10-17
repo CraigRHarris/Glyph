@@ -8,6 +8,7 @@ public class OmnidirectionalObject : MonoBehaviour
     private MouseInput InputScript;
     private SurvivalMeter MeterScript;
     private Spawner SpawnerScript;
+    private Combo ComboScript;
     float speed;
     float z = -10f;
     int hits = 0;
@@ -20,6 +21,7 @@ public class OmnidirectionalObject : MonoBehaviour
         InputScript = GameObject.Find("Canvas").GetComponent<MouseInput>();
         MeterScript = GameObject.Find("Slider").GetComponent<SurvivalMeter>();
         SpawnerScript = GameObject.Find("Spawner").GetComponent<Spawner>();
+        ComboScript = GameObject.Find("Combo").GetComponent<Combo>();
         speed = SpawnerScript.speed;
         maxhits = Random.Range(5, 10);
     }
@@ -33,6 +35,7 @@ public class OmnidirectionalObject : MonoBehaviour
             input = InputScript.input;
             ScoreScript.trigger = 1;
             MeterScript.trigger = 1;
+            ComboScript.trigger = 1;
             hits += 1;
             if (hits == maxhits)
             {
