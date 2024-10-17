@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class swipeinput : MonoBehaviour
+public class Shapeddirectiondetection : MonoBehaviour
 {
     public string shapeName; // name the shape 
 
@@ -23,6 +23,12 @@ public class swipeinput : MonoBehaviour
     }
 
     public SwipeDirection requiredSwipeDirection;  //set in the Inspector per shape
+
+    private void OnMouseDown()
+    {
+        //capture the start position when mouse is pressed down 
+        startTouchPosition = Input.mousePosition;
+    }
 
     private void OnMouseUp()
     {
@@ -86,7 +92,7 @@ public class swipeinput : MonoBehaviour
     // call this method when the shape is collectec via correct swipe
     private void CollectShape()
     {
-        Debug.Log($"Shape {shapeName} collectec with a {requiredSwipeDirection} swipe!");
+        Debug.Log($"Shape {shapeName} collectecd with a {requiredSwipeDirection} swipe!");
 
         //Destroy the shape object to simulate it being collected
         Destroy(gameObject);
