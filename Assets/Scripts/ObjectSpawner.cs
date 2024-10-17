@@ -5,10 +5,8 @@ using UnityEngine;
 public class ObjectSpawner : MonoBehaviour
 {
     //Object References
-    public GameObject Right;
-    public GameObject Left;
-    public GameObject Up; 
-    public GameObject Down;
+
+    public GameObject[] Objects; 
 
     public GameObject SpawnlocationObject;
 
@@ -18,24 +16,8 @@ public class ObjectSpawner : MonoBehaviour
     void Start()
     {
         //Create first object
-        int randint = Random.Range(1, 4);
+        SpawnObject();
         // Debug.Log(randint);
-        if(randint == 1)
-        {
-            Instantiate(Right, SpawnlocationObject.transform);
-        }
-        if(randint == 2)
-        {
-            Instantiate(Left, SpawnlocationObject.transform);
-        }
-        if (randint == 3)
-        {
-            Instantiate(Up, SpawnlocationObject.transform);
-        }
-        if (randint == 4)
-        {
-            Instantiate(Down, SpawnlocationObject.transform);
-        }
 
     }
 
@@ -43,5 +25,16 @@ public class ObjectSpawner : MonoBehaviour
     void Update()
     {
         //If it's the right time spawn the 
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            SpawnObject();
+        }
+    }
+
+    public void SpawnObject()
+    {
+        int randint = Random.Range(1, Objects.Length);
+
+        Instantiate(Objects[randint]);
     }
 }

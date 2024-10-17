@@ -123,7 +123,7 @@ MonoBehaviour:
   Score: {fileID: 0}
   Canvas: {fileID: 0}
   Slider: {fileID: 0}
-  direction: Up
+  direction: Down
 --- !u!114 &2174621107177163249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shapeName: 
-  requiredSwipeDirection: 0
+  requiredSwipeDirection: 1
 --- !u!1 &8503375705830238325
 GameObject:
   m_ObjectHideFlags: 0
