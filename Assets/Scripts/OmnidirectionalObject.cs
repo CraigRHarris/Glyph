@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class OmnidirectionalObject : MonoBehaviour
 {
-    public GameObject Score;
     private Score ScoreScript;
-    public GameObject Canvas;
     private MouseInput InputScript;
-    public GameObject Slider;
     private SurvivalMeter MeterScript;
     float z = -10f;
     int hits = 0;
@@ -17,9 +14,9 @@ public class OmnidirectionalObject : MonoBehaviour
 
     void Start()
     {
-        ScoreScript = Score.GetComponent<Score>();
-        InputScript = Canvas.GetComponent<MouseInput>();
-        MeterScript = Slider.GetComponent<SurvivalMeter>();
+        ScoreScript = GameObject.Find("Score").GetComponent<Score>();
+        InputScript = GameObject.Find("Canvas").GetComponent<MouseInput>();
+        MeterScript = GameObject.Find("Slider").GetComponent<SurvivalMeter>();
         maxhits = Random.Range(5, 10);
     }
 
@@ -42,7 +39,6 @@ public class OmnidirectionalObject : MonoBehaviour
         }
         if (z > 140f)
         {
-            MeterScript.trigger = 2;
             Destroy(gameObject);
         }
     }

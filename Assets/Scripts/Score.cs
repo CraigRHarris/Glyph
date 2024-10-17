@@ -7,7 +7,7 @@ public class Score : MonoBehaviour
 {
     public TMP_Text ScoreText;
     public int trigger = 0;
-    int score = 0;
+    public int score = 0;
     float timer;
 
     void Update()
