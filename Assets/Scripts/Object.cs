@@ -5,11 +5,8 @@ using UnityEngine.Windows;
 
 public class Object : MonoBehaviour
 {
-    public GameObject Score;
     private Score ScoreScript;
-    public GameObject Canvas;
     private MouseInput InputScript;
-    public GameObject Slider;
     private SurvivalMeter MeterScript;
     public string direction;
     float z = -10f;
@@ -17,14 +14,13 @@ public class Object : MonoBehaviour
 
     void Start()
     {
-        ScoreScript = Score.GetComponent<Score>();
-        InputScript = Canvas.GetComponent<MouseInput>();
-        MeterScript = Slider.GetComponent<SurvivalMeter>();
+        ScoreScript = GameObject.Find("Score").GetComponent<Score>();
+        InputScript = GameObject.Find("Canvas").GetComponent<MouseInput>();
+        MeterScript = GameObject.Find("Slider").GetComponent<SurvivalMeter>();
     }
 
     void Update()
     {
-
         z += 20 * Time.deltaTime;
         transform.position = new Vector3(0, 1, z);
         if (InputScript.input == direction)
