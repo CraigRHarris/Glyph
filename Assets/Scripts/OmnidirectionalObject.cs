@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class OmnidirectionalObject : MonoBehaviour
 {
-    public GameObject Score;
     private Score ScoreScript;
-    public GameObject Canvas;
     private MouseInput InputScript;
-    public GameObject Slider;
     private SurvivalMeter MeterScript;
+    private Spawner SpawnerScript;
+    private Combo ComboScript;
+    float speed;
     float z = -10f;
     int hits = 0;
     int maxhits;
@@ -17,32 +17,34 @@ public class OmnidirectionalObject : MonoBehaviour
 
     void Start()
     {
-        ScoreScript = Score.GetComponent<Score>();
-        InputScript = Canvas.GetComponent<MouseInput>();
-        MeterScript = Slider.GetComponent<SurvivalMeter>();
+        ScoreScript = GameObject.Find("Score").GetComponent<Score>();
+        InputScript = GameObject.Find("Canvas").GetComponent<MouseInput>();
+        MeterScript = GameObject.Find("Slider").GetComponent<SurvivalMeter>();
+        SpawnerScript = GameObject.Find("Spawner").GetComponent<Spawner>();
+        ComboScript = GameObject.Find("Combo").GetComponent<Combo>();
+        speed = SpawnerScript.speed;
         maxhits = Random.Range(5, 10);
     }
 
     void Update()
     {
-        z += 20 * Time.deltaTime;
+        z += speed * Time.deltaTime;
         transform.position = new Vector3(0, 1, z);
         if (InputScript.input != input & (InputScript.input == "Right" | InputScript.input == "Left" | InputScript.input == "Up" | InputScript.input == "Down"))
         {
             input = InputScript.input;
             ScoreScript.trigger = 1;
             MeterScript.trigger = 1;
+            ComboScript.trigger = 1;
             hits += 1;
             if (hits == maxhits)
             {
                 ScoreScript.trigger = 2;
                 Destroy(gameObject);
-                //Get glyph
             }
         }
         if (z > 140f)
         {
-            MeterScript.trigger = 2;
             Destroy(gameObject);
         }
     }

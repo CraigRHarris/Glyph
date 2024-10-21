@@ -16,8 +16,9 @@ public class Shapeddirectiondetection : MonoBehaviour
     //Define swipe directions (modify as neeeded)
     public enum SwipeDirection
     {
-        Up,
+        
         Down,
+        Up,
         Left,
         Right
     }
@@ -28,15 +29,22 @@ public class Shapeddirectiondetection : MonoBehaviour
     {
         //capture the start position when mouse is pressed down 
         startTouchPosition = Input.mousePosition;
+        Debug.Log(startTouchPosition);
     }
 
     private void OnMouseUp()
     {
         // capute the end position when mouse is released
-        endTouchPosition = Input.mousePosition;
-
+        
+        Debug.Log(endTouchPosition);
         //check if the swipe was dected and validate the direction
         DetectSwipe();
+    }
+
+    private void OnMouseDrag()
+    {
+        endTouchPosition = Input.mousePosition;
+
     }
 
     private void DetectSwipe()
@@ -49,21 +57,38 @@ public class Shapeddirectiondetection : MonoBehaviour
             swipe.Normalize(); // normalize the swipe direction
 
             // Determine the swipe dirction
-            if (IsSwipeUp(swipe) && requiredSwipeDirection == SwipeDirection.Up)
+            
+            if (IsSwipeDown(swipe))
             {
-                CollectShape();
+                if (requiredSwipeDirection == SwipeDirection.Down)
+                {
+                    CollectShape();
+                }
+                
             }
-            else if (IsSwipeDown(swipe) && requiredSwipeDirection == SwipeDirection.Down)
+            if (IsSwipeUp(swipe))
             {
-                CollectShape();
+                if (requiredSwipeDirection == SwipeDirection.Up)
+                {
+                    CollectShape();
+                }
+
             }
-            else if (IsSwipeLeft(swipe) && requiredSwipeDirection == SwipeDirection.Left)
+            if (IsSwipeLeft(swipe))
             {
-                CollectShape();
+                if (requiredSwipeDirection == SwipeDirection.Left)
+                {
+                    CollectShape();
+                }
+                
             }
-            else if (IsSwipeRight(swipe) && requiredSwipeDirection == SwipeDirection.Right)
+            if (IsSwipeRight(swipe))
             {
-                CollectShape();
+                if (requiredSwipeDirection == SwipeDirection.Right)
+                {
+                    CollectShape();
+                }
+                
             }
         }
     }
@@ -76,17 +101,17 @@ public class Shapeddirectiondetection : MonoBehaviour
 
     private bool IsSwipeDown(Vector2 swipe)
     {
-        return swipe.y > 0 && Mathf.Abs(swipe.y) > Mathf.Abs(swipe.x);
+        return swipe.y < 0 && Mathf.Abs(swipe.y) > Mathf.Abs(swipe.x);
     }
 
     private bool IsSwipeLeft(Vector2 swipe)
     {
-        return swipe.y > 0 && Mathf.Abs(swipe.y) > Mathf.Abs(swipe.x);
+        return swipe.x < 0 && Mathf.Abs(swipe.x) > Mathf.Abs(swipe.y);
     }
 
     private bool IsSwipeRight(Vector2 swipe)
     {
-        return swipe.y > 0 && Mathf.Abs(swipe.y) > Mathf.Abs(swipe.x);
+        return swipe.x > 0 && Mathf.Abs(swipe.x) > Mathf.Abs(swipe.y);
     }
 
     // call this method when the shape is collectec via correct swipe

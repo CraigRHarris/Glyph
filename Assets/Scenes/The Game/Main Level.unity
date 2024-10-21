@@ -732,8 +732,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Right: {fileID: 4601234820040560937, guid: 4d7489250850d794e836bff603da7d8f, type: 3}
   Left: {fileID: 2374045885347749639, guid: 92834d88fa8097e4c96890dc42dbc0c7, type: 3}
-  Up: {fileID: 2833290687511146629, guid: cb84ba71fcaf708428b5ef12b53873a4, type: 3}
+  Up: {fileID: 6368510883836866042, guid: 6c5801b6f29bf314a9846ac4577cefc7, type: 3}
   Down: {fileID: 2833290687511146629, guid: cb84ba71fcaf708428b5ef12b53873a4, type: 3}
+  Omni: {fileID: 0}
+  Objects:
+  - {fileID: 2833290687511146629, guid: cb84ba71fcaf708428b5ef12b53873a4, type: 3}
+  - {fileID: 2374045885347749639, guid: 92834d88fa8097e4c96890dc42dbc0c7, type: 3}
+  - {fileID: 4601234820040560937, guid: 4d7489250850d794e836bff603da7d8f, type: 3}
+  - {fileID: 6368510883836866042, guid: 6c5801b6f29bf314a9846ac4577cefc7, type: 3}
   SpawnlocationObject: {fileID: 1987419179}
   ObjectTimer: 5
 --- !u!4 &2058621493

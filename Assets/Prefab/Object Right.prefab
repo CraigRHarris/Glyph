@@ -207,7 +207,7 @@ MonoBehaviour:
   Score: {fileID: 0}
   Canvas: {fileID: 0}
   Slider: {fileID: 0}
-  direction: Right
+  direction: Left
 --- !u!114 &3182600122073583062
 MonoBehaviour:
   m_ObjectHideFlags: 0
