@@ -19,6 +19,8 @@ public class Shapeddirectiondetection : MonoBehaviour
     private Combo ComboScript;
     float speed;
     float z = -10f;
+    int hits;
+
 
     //Define swipe directions (modify as neeeded)
     public enum SwipeDirection
@@ -26,7 +28,8 @@ public class Shapeddirectiondetection : MonoBehaviour
         Down,
         Up,
         Left,
-        Right
+        Right,
+        Omni
     }
 
     void Start()
@@ -36,6 +39,14 @@ public class Shapeddirectiondetection : MonoBehaviour
         SpawnerScript = GameObject.Find("ObjectSpawner").GetComponent<ObjectSpawner>();
         ComboScript = GameObject.Find("Combo").GetComponent<Combo>();
         speed = SpawnerScript.speed;
+        if (requiredSwipeDirection == SwipeDirection.Omni)
+        {
+            speed /= 4;
+        }
+        if (requiredSwipeDirection == SwipeDirection.Omni)
+        {
+            hits = Random.Range(6, 10);
+        }
     }
 
     public SwipeDirection requiredSwipeDirection;  //set in the Inspector per shape
@@ -72,7 +83,13 @@ public class Shapeddirectiondetection : MonoBehaviour
             swipe.Normalize(); // normalize the swipe direction
 
             // Determine the swipe dirction
-            
+            if (requiredSwipeDirection == SwipeDirection.Omni && (IsSwipeDown(swipe) | IsSwipeUp(swipe) | IsSwipeLeft(swipe) | IsSwipeRight(swipe)))
+            {
+                MeterScript.trigger = 1;
+                ScoreScript.trigger = 1;
+                ComboScript.trigger = 1;
+                hits -= 1;
+            }
             if (IsSwipeDown(swipe))
             {
                 if (requiredSwipeDirection == SwipeDirection.Down)
@@ -133,6 +150,14 @@ public class Shapeddirectiondetection : MonoBehaviour
     {
         Debug.Log($"Shape {shapeName} collectecd with a {requiredSwipeDirection} swipe!");
 
+        if (requiredSwipeDirection == SwipeDirection.Omni)
+        {
+            ScoreScript.trigger = 2;
+        }
+        else
+        {
+            ScoreScript.trigger = 1;
+        }
         MeterScript.trigger = 1;
         ComboScript.trigger = 1;
 
@@ -145,10 +170,18 @@ public class Shapeddirectiondetection : MonoBehaviour
     {
         z += speed * Time.deltaTime;
         transform.position = new Vector3(0, 1, z);
+        if (requiredSwipeDirection == SwipeDirection.Omni &&  hits == 0)
+        {
+            CollectShape();
+        }
         if (z > 40f)
         {
             ComboScript.trigger = 2;
             Destroy(gameObject);
+        }
+        if (requiredSwipeDirection == SwipeDirection.Omni && hits == 0)
+        {
+            CollectShape();
         }
     }
 }

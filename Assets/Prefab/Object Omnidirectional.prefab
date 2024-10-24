@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4646856191700435096}
   - component: {fileID: 4524705565330623055}
   - component: {fileID: 4143433439455550634}
-  - component: {fileID: 5496375767884773078}
+  - component: {fileID: -282371128693291503}
   m_Layer: 0
   m_Name: Object Omnidirectional
   m_TagString: Untagged
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
-  m_LocalScale: {x: 2, y: 2, z: 0.1}
+  m_LocalScale: {x: 10, y: 10, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5496375767884773078
+--- !u!114 &-282371128693291503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,9 +115,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5730084548593511155}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89c350a260a4bad4e9dbf447372d1627, type: 3}
+  m_Script: {fileID: 11500000, guid: d31516ef8abb1454b9e1ac25702f06cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Score: {fileID: 8759914112378041287, guid: a37b6cf48bec71242bbd0248e9099c0c, type: 3}
-  Canvas: {fileID: 8069619402705795000, guid: 245472ecd8e84964181bb7e9cac48d08, type: 3}
-  Slider: {fileID: 427489697852824588, guid: 4aa2085fec3fd5045aee5f5f061b91a9, type: 3}
+  shapeName: 
+  requiredSwipeDirection: 4
