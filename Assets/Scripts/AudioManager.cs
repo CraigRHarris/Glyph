@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     
     [Header("Audio Clip")]
     public AudioClip example1;
+    public AudioClip example2;
 
     private void Start()
     {
