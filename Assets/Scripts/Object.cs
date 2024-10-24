@@ -5,10 +5,10 @@ using UnityEngine.Windows;
 
 public class Object : MonoBehaviour
 {
-    private Score ScoreScript;
-    private MouseInput InputScript;
-    private SurvivalMeter MeterScript;
-    private Spawner SpawnerScript;
+    public Score ScoreScript;
+    public MouseInput InputScript;
+    public SurvivalMeter MeterScript;
+    public Spawner SpawnerScript;
     public string direction;
     float speed;
     float z = -10f;
@@ -16,10 +16,10 @@ public class Object : MonoBehaviour
 
     void Start()
     {
-        ScoreScript = GameObject.Find("Score").GetComponent<Score>();
+        /*ScoreScript = GameObject.Find("Score").GetComponent<Score>();
         InputScript = GameObject.Find("Canvas").GetComponent<MouseInput>();
         MeterScript = GameObject.Find("Slider").GetComponent<SurvivalMeter>();
-        SpawnerScript = GameObject.Find("Spawner").GetComponent<Spawner>();
+        SpawnerScript = GameObject.Find("Spawner").GetComponent<Spawner>();*/
         speed = SpawnerScript.speed;
     }
 
