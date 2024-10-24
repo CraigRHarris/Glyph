@@ -48,6 +48,6 @@ public class Object : MonoBehaviour
             input = "null";
             ComboScript.trigger = 2;
             Destroy(gameObject);
-        } */
+        } 
     }
 }
