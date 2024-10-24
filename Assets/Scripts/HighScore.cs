@@ -7,16 +7,16 @@ using UnityEngine.SocialPlatforms.Impl;
 public class HighScore : MonoBehaviour
 {
     public TMP_Text ScoreText;
-    //private ValueStore ValueStore;
+    //private ValueStore StoreScript;
     private Score ScoreScript;
     public int highScore;
     int score;
 
     void Start()
     {
-        //ValueStore = GameObject.Find("ValueStore").GetComponent<ValueStore>();
+        //StoreScript = GameObject.Find("ValueStore").GetComponent<ValueStore>();
         ScoreScript = GameObject.Find("Score").GetComponent<Score>();
-        //highScore = ValueStore.score;
+        //highScore = StoreScript.score;
         ScoreText.SetText(highScore.ToString());
     }
     void Update()
@@ -26,9 +26,9 @@ public class HighScore : MonoBehaviour
         {
             highScore = score;
             ScoreText.SetText(highScore.ToString());
-            //if (ValueStore.score < highScore);
+            //if (StoreScript.score < highScore);
             //{
-                //ValueStore.score = highScore;
+                //StoreScript.score = highScore;
             //}
         }
     }
