@@ -17,7 +17,7 @@ public class Object : MonoBehaviour
 
     void Start()
     {
-        ScoreScript = GameObject.Find("Score").GetComponent<Score>();
+        /*ScoreScript = GameObject.Find("Score").GetComponent<Score>();
         InputScript = GameObject.Find("Canvas").GetComponent<MouseInput>();
         MeterScript = GameObject.Find("Slider").GetComponent<SurvivalMeter>();
         SpawnerScript = GameObject.Find("Spawner").GetComponent<Spawner>();
