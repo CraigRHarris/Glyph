@@ -12,12 +12,13 @@ public class AudioManager : MonoBehaviour
     // audioManager.PlaySFX(audioManager.name);
     
     [Header("Audio Clip")]
-    public AudioClip example1;
-    public AudioClip example2;
+    public AudioClip backgroundMusic;
+    public AudioClip gameOver;
+    public AudioClip pressButton;
 
     private void Start()
     {
-        musicSource.clip = example1;
+        musicSource.clip = backgroundMusic;
         musicSource.Play();
     }
 
