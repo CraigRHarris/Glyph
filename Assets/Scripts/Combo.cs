@@ -14,6 +14,7 @@ public class Combo : MonoBehaviour
     {
         if (trigger == 1)
         {
+            Debug.Log(1);
             combo += 1;
             ComboText.SetText(combo.ToString());
             trigger = 0;

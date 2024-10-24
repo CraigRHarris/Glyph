@@ -8,7 +8,7 @@ public class Object : MonoBehaviour
     private Score ScoreScript;
     private MouseInput InputScript;
     private SurvivalMeter MeterScript;
-    private Spawner SpawnerScript;
+    private ObjectSpawner SpawnerScript;
     private Combo ComboScript;
     public string direction;
     float speed;
@@ -17,10 +17,10 @@ public class Object : MonoBehaviour
 
     void Start()
     {
-        /*ScoreScript = GameObject.Find("Score").GetComponent<Score>();
+        ScoreScript = GameObject.Find("Score").GetComponent<Score>();
         InputScript = GameObject.Find("Canvas").GetComponent<MouseInput>();
         MeterScript = GameObject.Find("Slider").GetComponent<SurvivalMeter>();
-        SpawnerScript = GameObject.Find("Spawner").GetComponent<Spawner>();
+        SpawnerScript = GameObject.Find("ObjectSpawner").GetComponent<ObjectSpawner>();
         ComboScript = GameObject.Find("Combo").GetComponent<Combo>();
         speed = SpawnerScript.speed;
     }

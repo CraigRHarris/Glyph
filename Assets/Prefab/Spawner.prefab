@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba967d244217d6544b4faf38fb12c046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectRight: {fileID: 272386838526885889, guid: ac5f9d4d6f8c8424599690fd0da44747, type: 3}
-  ObjectLeft: {fileID: 7251060737532015374, guid: e725ad7c6f5f8e040ba4b79ae941c4fc, type: 3}
-  ObjectUp: {fileID: 8816871063363267592, guid: 468e73c5f1c50dd4a87e3c0e5d9d1b9d, type: 3}
-  ObjectDown: {fileID: 2187374541745532310, guid: 4244936b98217004ba5d2e4bd303bd98, type: 3}
+  ObjectRight: {fileID: 4601234820040560937, guid: 4d7489250850d794e836bff603da7d8f, type: 3}
+  ObjectLeft: {fileID: 2374045885347749639, guid: 92834d88fa8097e4c96890dc42dbc0c7, type: 3}
+  ObjectUp: {fileID: 6368510883836866042, guid: 6c5801b6f29bf314a9846ac4577cefc7, type: 3}
+  ObjectDown: {fileID: 2833290687511146629, guid: cb84ba71fcaf708428b5ef12b53873a4, type: 3}
   OmnidirectionalObject: {fileID: 5730084548593511155, guid: 93314fbe24eb89e4d824402b953e7cfa, type: 3}
   speed: 20

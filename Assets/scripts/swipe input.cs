@@ -13,14 +13,29 @@ public class Shapeddirectiondetection : MonoBehaviour
     // minimum distance for a valid swipe
     private float minSwipeDistance = 50f;
 
+    private Score ScoreScript;
+    private SurvivalMeter MeterScript;
+    private ObjectSpawner SpawnerScript;
+    private Combo ComboScript;
+    float speed;
+    float z = -10f;
+
     //Define swipe directions (modify as neeeded)
     public enum SwipeDirection
     {
-        
         Down,
         Up,
         Left,
         Right
+    }
+
+    void Start()
+    {
+        ScoreScript = GameObject.Find("Score").GetComponent<Score>();
+        MeterScript = GameObject.Find("Slider").GetComponent<SurvivalMeter>();
+        SpawnerScript = GameObject.Find("ObjectSpawner").GetComponent<ObjectSpawner>();
+        ComboScript = GameObject.Find("Combo").GetComponent<Combo>();
+        speed = SpawnerScript.speed;
     }
 
     public SwipeDirection requiredSwipeDirection;  //set in the Inspector per shape
@@ -88,7 +103,6 @@ public class Shapeddirectiondetection : MonoBehaviour
                 {
                     CollectShape();
                 }
-                
             }
         }
     }
@@ -119,24 +133,22 @@ public class Shapeddirectiondetection : MonoBehaviour
     {
         Debug.Log($"Shape {shapeName} collectecd with a {requiredSwipeDirection} swipe!");
 
+        MeterScript.trigger = 1;
+        ComboScript.trigger = 1;
+
         //Destroy the shape object to simulate it being collected
         Destroy(gameObject);
     } 
 
-
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
-        
+        z += speed * Time.deltaTime;
+        transform.position = new Vector3(0, 1, z);
+        if (z > 40f)
+        {
+            ComboScript.trigger = 2;
+            Destroy(gameObject);
+        }
     }
 }
