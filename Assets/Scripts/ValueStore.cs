@@ -13,11 +13,6 @@ public class ValueStore : MonoBehaviour
     void Start()
     {
         SceneManager.LoadScene("Main Level");
-        glyphState = new int[26];
-        for (int i = 0; i < 26; i++)
-        {
-            glyphState[i] = 0;
-        }
     }
 
     private void Awake()

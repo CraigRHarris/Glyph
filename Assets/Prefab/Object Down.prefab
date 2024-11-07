@@ -96,7 +96,6 @@ GameObject:
   - component: {fileID: 4560451063107610464}
   - component: {fileID: 758062984682954809}
   - component: {fileID: 6309463479592379885}
-  - component: {fileID: 3725495776848140108}
   - component: {fileID: 997863221546867467}
   m_Layer: 0
   m_Name: Object Down
@@ -192,22 +191,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3725495776848140108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2833290687511146629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdafa0fb67efe4f4c823dc62d7816b09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Score: {fileID: 0}
-  Canvas: {fileID: 0}
-  Slider: {fileID: 0}
-  direction: Up
 --- !u!114 &997863221546867467
 MonoBehaviour:
   m_ObjectHideFlags: 0

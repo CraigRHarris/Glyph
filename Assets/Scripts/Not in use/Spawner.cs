@@ -14,7 +14,6 @@ public class Spawner : MonoBehaviour
     public float speed = 20f;
     float timer;
     int type;
-    int direction;
 
     void Start()
     {

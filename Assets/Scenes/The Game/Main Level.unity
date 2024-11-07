@@ -865,7 +865,6 @@ GameObject:
   - component: {fileID: 1819146264}
   - component: {fileID: 1819146263}
   - component: {fileID: 1819146262}
-  - component: {fileID: 1819146261}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -873,19 +872,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1819146261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1819146260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7a7a2e0ebbd4b246995c7d83752a923, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  input: null
 --- !u!114 &1819146262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1012,7 +998,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2058621493}
-  - component: {fileID: 2058621492}
+  - component: {fileID: 2058621494}
   m_Layer: 0
   m_Name: ObjectSpawner
   m_TagString: Untagged
@@ -1020,27 +1006,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2058621492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058621491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef6d93b84864be84a916e7bac99704e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Objects:
-  - {fileID: 2833290687511146629, guid: cb84ba71fcaf708428b5ef12b53873a4, type: 3}
-  - {fileID: 2374045885347749639, guid: 92834d88fa8097e4c96890dc42dbc0c7, type: 3}
-  - {fileID: 4601234820040560937, guid: 4d7489250850d794e836bff603da7d8f, type: 3}
-  - {fileID: 6368510883836866042, guid: 6c5801b6f29bf314a9846ac4577cefc7, type: 3}
-  - {fileID: 5730084548593511155, guid: 93314fbe24eb89e4d824402b953e7cfa, type: 3}
-  SpawnlocationObject: {fileID: 1987419179}
-  speed: 20
-  ObjectTimer: 5
 --- !u!4 &2058621493
 Transform:
   m_ObjectHideFlags: 0
@@ -1056,6 +1021,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2058621494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058621491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef6d93b84864be84a916e7bac99704e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objects:
+  - {fileID: 4601234820040560937, guid: 4d7489250850d794e836bff603da7d8f, type: 3}
+  - {fileID: 2374045885347749639, guid: 92834d88fa8097e4c96890dc42dbc0c7, type: 3}
+  - {fileID: 6368510883836866042, guid: 6c5801b6f29bf314a9846ac4577cefc7, type: 3}
+  - {fileID: 2833290687511146629, guid: cb84ba71fcaf708428b5ef12b53873a4, type: 3}
+  - {fileID: 5730084548593511155, guid: 93314fbe24eb89e4d824402b953e7cfa, type: 3}
+  SpawnlocationObject: {fileID: 1987419179}
+  speed: 20
+  ObjectTimer: 5
 --- !u!1 &2147161246
 GameObject:
   m_ObjectHideFlags: 0

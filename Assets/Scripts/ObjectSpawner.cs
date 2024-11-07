@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,10 @@ public class ObjectSpawner : MonoBehaviour
 
     //Time Between Objects
     public float ObjectTimer = 5f;
+
+    float timer;
+    int randint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,25 +32,22 @@ public class ObjectSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
         //If it's the right time spawn the 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (timer > 3f)
         {
-            if (ComboScript.combo == 10 | ComboScript.combo == 30 | ComboScript.combo == 50 | ComboScript.combo == 70 | ComboScript.combo == 90)
+            if (ComboScript.combo == 1 | ComboScript.combo == 30 | ComboScript.combo == 50 | ComboScript.combo == 70 | ComboScript.combo == 90)
             {
                 Instantiate(Objects[4], new Vector3(0, 1, -10), Quaternion.identity);
             }
             else
             {
-                SpawnObject();
-                speed += 1f;
+                randint = UnityEngine.Random.Range(1, Objects.Length - 1);
+
+                Instantiate(Objects[randint], new Vector3(0, 1, -10), Quaternion.identity);
             }
+            speed += 1f;
+            timer = 0f;
         }
-    }
-
-    public void SpawnObject()
-    {
-        int randint = Random.Range(1, Objects.Length - 1);
-
-        Instantiate(Objects[randint]);
     }
 }

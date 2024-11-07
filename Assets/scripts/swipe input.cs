@@ -17,10 +17,10 @@ public class Shapeddirectiondetection : MonoBehaviour
     private SurvivalMeter MeterScript;
     private ObjectSpawner SpawnerScript;
     private Combo ComboScript;
+    private ValueStore StoreScript;
     float speed;
     float z = -10f;
     int hits;
-
 
     //Define swipe directions (modify as neeeded)
     public enum SwipeDirection
@@ -32,12 +32,15 @@ public class Shapeddirectiondetection : MonoBehaviour
         Omni
     }
 
+    SwipeDirection input;
+
     void Start()
     {
         ScoreScript = GameObject.Find("Score").GetComponent<Score>();
         MeterScript = GameObject.Find("Slider").GetComponent<SurvivalMeter>();
         SpawnerScript = GameObject.Find("ObjectSpawner").GetComponent<ObjectSpawner>();
         ComboScript = GameObject.Find("Combo").GetComponent<Combo>();
+        StoreScript = GameObject.Find("ValueStore").GetComponent<ValueStore>();
         speed = SpawnerScript.speed;
         if (requiredSwipeDirection == SwipeDirection.Omni)
         {
@@ -96,7 +99,10 @@ public class Shapeddirectiondetection : MonoBehaviour
                 {
                     CollectShape();
                 }
-                
+                else if(requiredSwipeDirection != SwipeDirection.Omni)
+                {
+                    MeterScript.trigger = 2;
+                }
             }
             if (IsSwipeUp(swipe))
             {
@@ -104,7 +110,10 @@ public class Shapeddirectiondetection : MonoBehaviour
                 {
                     CollectShape();
                 }
-
+                else if (requiredSwipeDirection != SwipeDirection.Omni)
+                {
+                    MeterScript.trigger = 2;
+                }
             }
             if (IsSwipeLeft(swipe))
             {
@@ -112,13 +121,20 @@ public class Shapeddirectiondetection : MonoBehaviour
                 {
                     CollectShape();
                 }
-                
+                else if (requiredSwipeDirection != SwipeDirection.Omni)
+                {
+                    MeterScript.trigger = 2;
+                }
             }
             if (IsSwipeRight(swipe))
             {
                 if (requiredSwipeDirection == SwipeDirection.Right)
                 {
                     CollectShape();
+                }
+                else if (requiredSwipeDirection != SwipeDirection.Omni)
+                {
+                    MeterScript.trigger = 2;
                 }
             }
         }
@@ -153,6 +169,16 @@ public class Shapeddirectiondetection : MonoBehaviour
         if (requiredSwipeDirection == SwipeDirection.Omni)
         {
             ScoreScript.trigger = 2;
+
+            for (int i = 0; i < 26; i++)
+            {
+                if (StoreScript.glyphState[i] == 0);
+                {
+                    StoreScript.glyphState[i] = 1;
+                    Debug.Log(StoreScript.glyphState[i]);
+                    i = 26;
+                }
+            }
         }
         else
         {

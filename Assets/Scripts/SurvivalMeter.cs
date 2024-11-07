@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SurvivalMeter : MonoBehaviour
 {
@@ -54,7 +55,7 @@ public class SurvivalMeter : MonoBehaviour
             //Stop Gameplay by disabling the object spawner script
             //Show animation of losing + play sound effects
             //Show game over screen
-            
+            SceneManager.LoadScene("Ancient Door");
         }
 
         // if correct swipe increase timer
