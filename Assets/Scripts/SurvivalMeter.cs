@@ -20,16 +20,16 @@ public class SurvivalMeter : MonoBehaviour
     private float CurrentTime;
     private float UpdateTime;
 
-    private GameOver gameOverScript;
+    private GameOverScript gameOverScript;
     private AudioManager audioManagerScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameOverScript = GetComponent<GameOver>();
         audioManagerScript = GetComponent<AudioManager>();
+        gameOverScript = GetComponent<GameOverScript>();
 
-        //Time.timeScale = 1;
+        //spawnObject.GetComponent<spawnScriptName>().enabled = true;
     }
 
     // Update is called once per frame
@@ -54,7 +54,10 @@ public class SurvivalMeter : MonoBehaviour
             //Stop Gameplay by disabling the object spawner script
             //Show animation of losing + play sound effects
             //Show game over screen
-            
+            //Time.timeScale = 0;
+            //spawnObject.GetComponent<spawnScriptName>().enabled = false;
+            gameOverScript.GameOver();
+
         }
 
         // if correct swipe increase timer

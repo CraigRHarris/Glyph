@@ -13,7 +13,8 @@ public class AudioManager : MonoBehaviour
     
     [Header("Audio Clip")]
     public AudioClip backgroundMusic;
-    public AudioClip gameOver;
+    public AudioClip gameOverSFX;
+    public AudioClip gameOverMusic;
     public AudioClip pressButton;
 
     private void Start()
@@ -25,5 +26,11 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
+    }
+
+    public void PlayMusic(AudioClip clip)
+    {
+        musicSource.Stop();
+        musicSource.PlayOneShot(clip);
     }
 }
