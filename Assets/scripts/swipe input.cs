@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore;
 
 public class Shapeddirectiondetection : MonoBehaviour
 {
@@ -170,15 +171,16 @@ public class Shapeddirectiondetection : MonoBehaviour
         {
             ScoreScript.trigger = 2;
 
+            Debug.Log(StoreScript.glyphState[0]);
             for (int i = 0; i < 26; i++)
             {
                 if (StoreScript.glyphState[i] == 0);
                 {
                     StoreScript.glyphState[i] = 1;
-                    Debug.Log(StoreScript.glyphState[i]);
                     i = 26;
                 }
             }
+            Destroy(gameObject);
         }
         else
         {
@@ -192,7 +194,7 @@ public class Shapeddirectiondetection : MonoBehaviour
     } 
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         z += speed * Time.deltaTime;
         transform.position = new Vector3(0, 1, z);

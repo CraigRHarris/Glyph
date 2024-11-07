@@ -17,7 +17,6 @@ public class Door : MonoBehaviour
             if (StoreScript.glyphState[i] == 1)
             {
                 Instantiate(glyph[i], coordinates[i], Quaternion.identity);
-                StoreScript.glyphState[i] = 2;
             }
         }
     }

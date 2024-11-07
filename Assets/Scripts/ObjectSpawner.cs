@@ -36,13 +36,13 @@ public class ObjectSpawner : MonoBehaviour
         //If it's the right time spawn the 
         if (timer > 3f)
         {
-            if (ComboScript.combo == 1 | ComboScript.combo == 30 | ComboScript.combo == 50 | ComboScript.combo == 70 | ComboScript.combo == 90)
+            if (ComboScript.combo == 10 | ComboScript.combo == 30 | ComboScript.combo == 50 | ComboScript.combo == 70 | ComboScript.combo == 90)
             {
                 Instantiate(Objects[4], new Vector3(0, 1, -10), Quaternion.identity);
             }
             else
             {
-                randint = UnityEngine.Random.Range(1, Objects.Length - 1);
+                randint = UnityEngine.Random.Range(0, Objects.Length - 1);
 
                 Instantiate(Objects[randint], new Vector3(0, 1, -10), Quaternion.identity);
             }

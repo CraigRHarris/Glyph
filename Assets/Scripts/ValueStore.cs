@@ -8,12 +8,6 @@ public class ValueStore : MonoBehaviour
     public static ValueStore Instance;
     public int score;
     public int[] glyphState;
-    int newGlyph;
-
-    void Start()
-    {
-        SceneManager.LoadScene("Main Level");
-    }
 
     private void Awake()
     {
@@ -25,5 +19,9 @@ public class ValueStore : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-    //Change glyphState from glyph script
+
+    void Start()
+    {
+        SceneManager.LoadScene("Main Level");
+    }
 }
