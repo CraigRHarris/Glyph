@@ -10,8 +10,8 @@ public class GameOverScript : MonoBehaviour
 
     private void Start()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-        gameOverGroup.SetActive(false);
+        //audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        //gameOverGroup.SetActive(false);
     }
 
     public void GameOver()
@@ -19,7 +19,6 @@ public class GameOverScript : MonoBehaviour
         //spawnObject.GetComponent<spawnScriptName>().enabled = false;
         //audioManager.PlaySFX(gameOverSFX);
         //audioManager.PlayMusic(gameOverMusic);
-        gameOverGroup.SetActive(true);
-
+        //gameOverGroup.SetActive(true);
     }
 }

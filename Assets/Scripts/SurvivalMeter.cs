@@ -21,13 +21,13 @@ public class SurvivalMeter : MonoBehaviour
     private float CurrentTime;
     private float UpdateTime;
 
-    private GameOver gameOverScript;
+    private GameOverScript gameOverScript;
     private AudioManager audioManagerScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        gameOverScript = GetComponent<GameOver>();
+        gameOverScript = GetComponent<GameOverScript>();
         audioManagerScript = GetComponent<AudioManager>();
 
         //Time.timeScale = 1;
