@@ -39,7 +39,7 @@ public class SurvivalMeter : MonoBehaviour
         // update timer
         CurrentTime = Time.time;
         // Debug.Log(CurrentTime);
-        UpdateTime = SurvivalTimer - Time.time;
+        UpdateTime = SurvivalTimer - 2 * Time.time;
 
         // cap the timer
         if (UpdateTime > 10)
