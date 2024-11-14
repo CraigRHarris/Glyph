@@ -170,11 +170,9 @@ public class Shapeddirectiondetection : MonoBehaviour
         if (requiredSwipeDirection == SwipeDirection.Omni)
         {
             ScoreScript.trigger = 2;
-
-            Debug.Log(StoreScript.glyphState[0]);
             for (int i = 0; i < 26; i++)
             {
-                if (StoreScript.glyphState[i] == 0);
+                if (StoreScript.glyphState[i] == 0)
                 {
                     StoreScript.glyphState[i] = 1;
                     i = 26;
@@ -206,10 +204,6 @@ public class Shapeddirectiondetection : MonoBehaviour
         {
             ComboScript.trigger = 2;
             Destroy(gameObject);
-        }
-        if (requiredSwipeDirection == SwipeDirection.Omni && hits == 0)
-        {
-            CollectShape();
         }
     }
 }
