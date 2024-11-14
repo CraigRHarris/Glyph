@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ValueStore test.unity
+    guid: 0af36e89f2a84ac4e8de888a0e4923a7
+  - enabled: 1
+    path: Assets/Scenes/The Game/Main Level.unity
+    guid: 0702604f8a393f543bba75226e780de4
+  - enabled: 1
+    path: Assets/Scenes/Ancient Door.unity
+    guid: 7c5c848bd2c5e3747b628aac95e217da
   m_configObjects: {}

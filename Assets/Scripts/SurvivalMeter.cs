@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SurvivalMeter : MonoBehaviour
 {
@@ -20,16 +21,16 @@ public class SurvivalMeter : MonoBehaviour
     private float CurrentTime;
     private float UpdateTime;
 
-    private GameOverScript gameOverScript;
+    private GameOver gameOverScript;
     private AudioManager audioManagerScript;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameOverScript = GetComponent<GameOver>();
         audioManagerScript = GetComponent<AudioManager>();
-        gameOverScript = GetComponent<GameOverScript>();
 
-        //spawnObject.GetComponent<spawnScriptName>().enabled = true;
+        //Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -54,10 +55,7 @@ public class SurvivalMeter : MonoBehaviour
             //Stop Gameplay by disabling the object spawner script
             //Show animation of losing + play sound effects
             //Show game over screen
-            //Time.timeScale = 0;
-            //spawnObject.GetComponent<spawnScriptName>().enabled = false;
-            gameOverScript.GameOver();
-
+            SceneManager.LoadScene("Ancient Door");
         }
 
         // if correct swipe increase timer
