@@ -16,6 +16,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip gameOverSFX;
     public AudioClip gameOverMusic;
     public AudioClip pressButton;
+    public AudioClip successfulSwipe;
+    public AudioClip gainedGlyph;
+    public AudioClip openDoor;
+    public AudioClip tickingTimer;
+    public AudioClip breakGlyph;
 
     private void Start()
     {

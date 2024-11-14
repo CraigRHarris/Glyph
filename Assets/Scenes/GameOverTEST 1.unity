@@ -297,6 +297,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2583254723519723939, guid: 77be7fa37465f7c499d91c24a513e408, type: 3}
+      propertyPath: openDoor
+      value: 
+      objectReference: {fileID: 8300000, guid: ccad86822cd87a242a79e3c241d8a0fe, type: 3}
+    - target: {fileID: 2583254723519723939, guid: 77be7fa37465f7c499d91c24a513e408, type: 3}
+      propertyPath: breakGlyph
+      value: 
+      objectReference: {fileID: 8300000, guid: 961a8fe604cd73547bd6fccb90648917, type: 3}
+    - target: {fileID: 2583254723519723939, guid: 77be7fa37465f7c499d91c24a513e408, type: 3}
+      propertyPath: gainedGlyph
+      value: 
+      objectReference: {fileID: 8300000, guid: 7465d02c057204249a2b877580cadb22, type: 3}
+    - target: {fileID: 2583254723519723939, guid: 77be7fa37465f7c499d91c24a513e408, type: 3}
+      propertyPath: gameOverSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e9f89d598e76094b94810840ff6558f, type: 3}
+    - target: {fileID: 2583254723519723939, guid: 77be7fa37465f7c499d91c24a513e408, type: 3}
+      propertyPath: pressButton
+      value: 
+      objectReference: {fileID: 8300000, guid: cc92cbfbe54ad324b99b11a6c23c2197, type: 3}
+    - target: {fileID: 2583254723519723939, guid: 77be7fa37465f7c499d91c24a513e408, type: 3}
+      propertyPath: tickingTimer
+      value: 
+      objectReference: {fileID: 8300000, guid: a166ad446bcb0c04192f74d535ae20ad, type: 3}
+    - target: {fileID: 2583254723519723939, guid: 77be7fa37465f7c499d91c24a513e408, type: 3}
+      propertyPath: gameOverMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 473710dc3c3e43c4092afcdb6ade1587, type: 3}
+    - target: {fileID: 2583254723519723939, guid: 77be7fa37465f7c499d91c24a513e408, type: 3}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 857dd447dab9e584c9009e460aaba40b, type: 3}
+    - target: {fileID: 2583254723519723939, guid: 77be7fa37465f7c499d91c24a513e408, type: 3}
+      propertyPath: successfulSwipe
+      value: 
+      objectReference: {fileID: 8300000, guid: 50a9968730dff3c4cbd4793d5eab092e, type: 3}
     - target: {fileID: 6687392628399058469, guid: 77be7fa37465f7c499d91c24a513e408, type: 3}
       propertyPath: m_Name
       value: AudioManager
