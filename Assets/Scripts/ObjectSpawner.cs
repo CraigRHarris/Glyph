@@ -32,22 +32,25 @@ public class ObjectSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        //If it's the right time spawn the 
-        if (timer > 3f)
+        if ((GameObject.Find("Object Right(Clone)") == null) && (GameObject.Find("Object Left(Clone)") == null) && (GameObject.Find("Object Up(Clone)") == null) && (GameObject.Find("Object Down(Clone)") == null) && (GameObject.Find("Object Omnidirectional(Clone)") == null))
         {
-            if (ComboScript.combo == 10 | ComboScript.combo == 30 | ComboScript.combo == 50 | ComboScript.combo == 70 | ComboScript.combo == 90)
+            timer += Time.deltaTime;
+            //If it's the right time spawn the 
+            if (timer > 1f)
             {
-                Instantiate(Objects[4], new Vector3(0, 1, -10), Quaternion.identity);
-            }
-            else
-            {
-                randint = UnityEngine.Random.Range(0, Objects.Length - 1);
+                if (ComboScript.combo == 10 | ComboScript.combo == 30 | ComboScript.combo == 50 | ComboScript.combo == 70 | ComboScript.combo == 90)
+                {
+                    Instantiate(Objects[4], new Vector3(0, 1, -10), Quaternion.identity);
+                }
+                else
+                {
+                    randint = UnityEngine.Random.Range(0, Objects.Length - 1);
 
-                Instantiate(Objects[randint], new Vector3(0, 1, -10), Quaternion.identity);
+                    Instantiate(Objects[randint], new Vector3(0, 1, -10), Quaternion.identity);
+                }
+                speed += 1f;
+                timer = 0f;
             }
-            speed += 1f;
-            timer = 0f;
         }
     }
 }

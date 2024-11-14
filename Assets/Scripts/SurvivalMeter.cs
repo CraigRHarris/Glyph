@@ -21,15 +21,14 @@ public class SurvivalMeter : MonoBehaviour
     private float CurrentTime;
     private float UpdateTime;
 
-    //private GameOver gameOverScript;
+    private GameOverScript gameOverScript;
     private AudioManager audioManagerScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        //gameOverScript = GetComponent<GameOver>();
-        //audioManagerScript = GetComponent<AudioManager>();
-        audioManagerScript = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        gameOverScript = GetComponent<GameOverScript>();
+        audioManagerScript = GetComponent<AudioManager>();
 
         //Time.timeScale = 1;
     }
@@ -40,18 +39,12 @@ public class SurvivalMeter : MonoBehaviour
         // update timer
         CurrentTime = Time.time;
         // Debug.Log(CurrentTime);
-        UpdateTime = SurvivalTimer - Time.time;
+        UpdateTime = SurvivalTimer - 2 * Time.time;
 
         // cap the timer
         if (UpdateTime > 10)
         {
             UpdateTime = 10;
-        }
-
-        if (UpdateTime <= 3)
-        {
-            //play ticking timer SFX, if update timer <= 0 stop playing ticking timer SFX, if update timer > 3 then stop playing ticking timer sfx
-            //audioManagerScript.PlaySFX(tickingTimer);
         }
 
         // Debug.Log(UpdateTime);
