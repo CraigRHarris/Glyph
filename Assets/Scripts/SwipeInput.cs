@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore;
 
-public class Shapeddirectiondetection : MonoBehaviour
+public class SwipeInput : MonoBehaviour
 {
-    public string shapeName; // name the shape 
+    public string shapeName; // name the shape
 
     private Vector2 startTouchPosition;
     private Vector2 endTouchPosition;
@@ -20,7 +20,7 @@ public class Shapeddirectiondetection : MonoBehaviour
     private Combo ComboScript;
     private ValueStore StoreScript;
     float speed;
-    float z = -10f;
+    float z = -10;
     int hits;
 
     //Define swipe directions (modify as neeeded)
@@ -170,14 +170,7 @@ public class Shapeddirectiondetection : MonoBehaviour
         if (requiredSwipeDirection == SwipeDirection.Omni)
         {
             ScoreScript.trigger = 2;
-            for (int i = 0; i < 26; i++)
-            {
-                if (StoreScript.glyphState[i] == 0)
-                {
-                    StoreScript.glyphState[i] = 1;
-                    i = 26;
-                }
-            }
+            SpawnerScript.trigger = 1;
             Destroy(gameObject);
         }
         else
@@ -195,6 +188,7 @@ public class Shapeddirectiondetection : MonoBehaviour
     public void Update()
     {
         z += speed * Time.deltaTime;
+        Debug.Log(Time.deltaTime);
         transform.position = new Vector3(0, 1, z);
         if (requiredSwipeDirection == SwipeDirection.Omni &&  hits == 0)
         {
