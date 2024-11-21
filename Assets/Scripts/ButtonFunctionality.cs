@@ -14,4 +14,9 @@ public class ButtonFunctionality : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void GoToAncientDoor()
+    {
+        SceneManager.LoadScene("Ancient Door");
+    }
 }
