@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 0.33333334}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.33333334}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -295,7 +295,6 @@ MonoBehaviour:
   CorrectSwipe: 2.5
   IncorrectSwipe: 1.5
   trigger: 0
-  gameOverScript: {fileID: 0}
 --- !u!114 &-7992103230833271070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9597ff8dce6ef3f488d85a96cdb984ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverGroup: {fileID: 0}
 --- !u!1 &5589141734147954747
 GameObject:
   m_ObjectHideFlags: 0
