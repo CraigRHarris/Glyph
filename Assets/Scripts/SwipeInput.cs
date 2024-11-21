@@ -188,7 +188,6 @@ public class SwipeInput : MonoBehaviour
     public void Update()
     {
         z += speed * Time.deltaTime;
-        Debug.Log(Time.deltaTime);
         transform.position = new Vector3(0, 1, z);
         if (requiredSwipeDirection == SwipeDirection.Omni &&  hits == 0)
         {

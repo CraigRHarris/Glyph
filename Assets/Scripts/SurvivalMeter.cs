@@ -20,6 +20,7 @@ public class SurvivalMeter : MonoBehaviour
 
     private float CurrentTime;
     private float UpdateTime;
+    float delay;
 
     private GameOverScript gameOverScript;
     private AudioManager audioManagerScript;
@@ -29,6 +30,7 @@ public class SurvivalMeter : MonoBehaviour
     {
         gameOverScript = GetComponent<GameOverScript>();
         audioManagerScript = GetComponent<AudioManager>();
+        delay = Time.time;
 
         //Time.timeScale = 1;
     }
@@ -37,9 +39,9 @@ public class SurvivalMeter : MonoBehaviour
     void Update()
     {
         // update timer
-        CurrentTime = Time.time;
+        CurrentTime = Time.time - delay;
         // Debug.Log(CurrentTime);
-        UpdateTime = SurvivalTimer - Time.time;
+        UpdateTime = SurvivalTimer - (Time.time - delay);
 
         // cap the timer
         if (UpdateTime > 10)

@@ -84,13 +84,17 @@ public class ObjectSpawner : MonoBehaviour
             }
             if (trigger == 1)
             {
-                for (int i = 0; i < 26; i++)
+
+                if (UnityEngine.Random.Range(0, 2) == 1)
                 {
-                    if (StoreScript.glyphState[i] == 0)
+                    for (int i = 0; i < 26; i++)
                     {
-                        StoreScript.glyphState[i] = 1;
-                        Instantiate(glyph[i], new Vector3(0, 1, 0), Quaternion.identity);
-                        i = 26;
+                        if (StoreScript.glyphState[i] == 0)
+                        {
+                            StoreScript.glyphState[i] = 1;
+                            Instantiate(glyph[i], new Vector3(0, 1, 0), Quaternion.identity);
+                            i = 26;
+                        }
                     }
                 }
                 timer = 0;

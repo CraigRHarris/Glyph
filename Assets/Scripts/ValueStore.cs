@@ -22,6 +22,6 @@ public class ValueStore : MonoBehaviour
 
     void Start()
     {
-        SceneManager.LoadScene("Main Level");
+        SceneManager.LoadScene("Main Menu");
     }
 }

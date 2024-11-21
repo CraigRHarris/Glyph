@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore;
+using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
@@ -18,6 +19,14 @@ public class Door : MonoBehaviour
             {
                 Instantiate(glyph[i], coordinates[i], Quaternion.identity);
             }
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            SceneManager.LoadScene("Main Menu");
         }
     }
 }
