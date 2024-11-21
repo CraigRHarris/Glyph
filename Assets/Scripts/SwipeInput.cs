@@ -193,7 +193,7 @@ public class SwipeInput : MonoBehaviour
         {
             CollectShape();
         }
-        if (z > 40f)
+        if (z > 100f)
         {
             ComboScript.trigger = 2;
             Destroy(gameObject);
