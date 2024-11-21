@@ -48,8 +48,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 3052341750197911468}
   SFXSource: {fileID: 9014203618683582570}
-  example1: {fileID: 0}
-  example2: {fileID: 0}
+  backgroundMusic: {fileID: 8300000, guid: 857dd447dab9e584c9009e460aaba40b, type: 3}
+  gameOverSFX: {fileID: 8300000, guid: 3e9f89d598e76094b94810840ff6558f, type: 3}
+  gameOverMusic: {fileID: 8300000, guid: 473710dc3c3e43c4092afcdb6ade1587, type: 3}
+  pressButton: {fileID: 8300000, guid: cc92cbfbe54ad324b99b11a6c23c2197, type: 3}
+  successfulSwipe: {fileID: 8300000, guid: 50a9968730dff3c4cbd4793d5eab092e, type: 3}
+  gainedGlyph: {fileID: 8300000, guid: 7465d02c057204249a2b877580cadb22, type: 3}
+  openDoor: {fileID: 8300000, guid: ccad86822cd87a242a79e3c241d8a0fe, type: 3}
+  tickingTimer: {fileID: 8300000, guid: a166ad446bcb0c04192f74d535ae20ad, type: 3}
+  breakGlyph: {fileID: 8300000, guid: 961a8fe604cd73547bd6fccb90648917, type: 3}
 --- !u!1 &7855452272258057339
 GameObject:
   m_ObjectHideFlags: 0
