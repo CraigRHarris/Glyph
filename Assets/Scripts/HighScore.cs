@@ -14,7 +14,7 @@ public class HighScore : MonoBehaviour
     {
         StoreScript = GameObject.Find("ValueStore").GetComponent<ValueStore>();
         ScoreScript = GameObject.Find("Score").GetComponent<Score>();
-        ScoreText.SetText(StoreScript.score.ToString());
+        ScoreText.SetText("High Score : " + StoreScript.score.ToString());
     }
     void Update()
     {

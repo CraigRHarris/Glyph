@@ -15,21 +15,19 @@ public class Score : MonoBehaviour
         if (trigger == 1)
         {
             score++;
-            ScoreText.SetText(score.ToString());
             trigger = 0;
         }
         if (trigger == 2)
         {
             score +=5;
-            ScoreText.SetText(score.ToString());
             trigger = 0;
         }
         timer += Time.deltaTime;
         if (timer > 1)
         {
             score++;
-            ScoreText.SetText(score.ToString());
             timer = 0;
         }
+        ScoreText.SetText("Score : " + score.ToString());
     }
 }
